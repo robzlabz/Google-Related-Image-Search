@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Get Google Related Search</title>
+	<title>Get Google Image Related Search</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
 	<style type="text/css">
@@ -53,6 +53,10 @@
 				.done(function(result){
 					console.log(result);
 					$('#first_keyword').html('Search result for : ' + keyword);
+
+					// fix, clearing last result
+					$('#related_keyword').html('');
+
 					$.each(result, function(key, value){
 						$('#related_keyword').append('<tr><td>'+value+'</td></tr>');	
 					});					
